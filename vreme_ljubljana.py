@@ -12,4 +12,12 @@ conn.request("GET", "/weather?q=Ljubljana&lat=0&lon=0&callback=test&id=2172797&l
 res = conn.getresponse()
 data = res.read()
 
-print("Ljubljana: ",data.decode("utf-8"))
+
+file=open("uros.txt","w")
+file.write(data.decode("utf-8"))
+file.close()
+
+file=open("uros.txt","r")
+print(file.read())
+
+
